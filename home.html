@@ -1,0 +1,121 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/home.css">
+    <script src="js/jquery.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="menu">
+            <img src="images/menu.png" alt="menu">
+        </div>
+        <div class="logo">
+            <img src="images/logo.png" alt="logo">
+            <p>UNIVERSITAS DIPONEGORO</p>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="nav-side">
+            <div class="bio">
+                <img src="images/profil.png" alt="profil">
+                <div class="paragraf">
+
+                    <span class="row">
+                        <h5>Obed Syaiful Aprilia</h5>
+                    </span>
+                    <span class="row">
+                        <ipk>3.78</ipk> /
+                        <sks>23 SKS</sks>
+                    </span>
+                </div>
+
+            </div>
+            <div class="nav-menu">
+                <div class="sub-menu">
+                    <div class="index"></div>
+                    <img src="images/toga.png" alt="icon">
+                    <h4>KRS</h4>
+                    <div class="segitiga"></div>
+                </div>
+
+                <div class="sub-menu">
+                    <div class="index"></div>
+                    <img src="images/print.png" alt="icon">
+                    <h4>Cetak Jadwal</h4>
+                    <div class="segitiga"></div>
+                </div>
+
+                <div class="sub-menu">
+                    <div class="index"></div>
+                    <img src="images/setting.png" alt="icon">
+                    <h4>Edit Profil</h4>
+                    <div class="segitiga"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="edit">
+                <img src="images/profil.png" alt="profil">
+                <form action="#" method="POST">
+                    <span>Nama <input type="text" name="Nama" id=""></span>
+                    <span>NIM <input type="text" name="NIM" id=""></span>
+
+                    <span id="textarea">Alamat <textarea name="Alamat" id=""></textarea></span>
+
+                    <span>Tempat Lahir <input type="text" name="tempatlahir" id=""></span>
+
+                    <span>Tanggal Lahir <input type="date" name="tgllahir" id=""></span>
+
+
+                    <span>Email <input type="email" name="email" id=""></span>
+
+                    <span>HP <input type="phone" name="hp" id=""></span>
+
+                    <span>Nama wali <input type="text" name="wali" id=""></span>
+                    <span>HP wali <input type="phone" name="hpwali" id=""></span>
+
+                    <span> <input type="submit" name="submit" value="Simpan"></span>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- script togle menu -->
+    <script>
+        $(document).ready(() => {
+            var status = false;
+            $(".menu").click(() => {
+                if (status) {
+                    $(".nav-side").css("opacity", 0);
+
+                    status = false;
+                } else {
+                    $(".nav-side").css("opacity", 1);
+
+
+                    status = true;
+                }
+            });
+
+            $(".sub-menu").click(function() {
+                $(".sub-menu .segitiga").css("opacity", "0");
+                $(".sub-menu").css("background", "transparent");
+                $(this).children(".segitiga").css("opacity", "1");
+                $(this).css("background", "#48c6d7");
+
+            });
+
+            $(".content").click(() => {
+                $(".nav-side").css("opacity", 0);
+                status = false;
+            })
+        });
+    </script>
+</body>
+
+</html>
